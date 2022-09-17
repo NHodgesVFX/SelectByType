@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtp1ghdcohhx2"]
+
+[ext_resource type="Script" path="res://addons/SelectByType/F_SelectByType.gd" id="1_y0xen"]
+
+[node name="SelectByType" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y0xen")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer"]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 31.0
+placeholder_text = "Node Type"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 1152.0
+offset_bottom = 66.0
+text = "Select"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
